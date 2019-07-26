@@ -21,19 +21,20 @@
 										<div class="form-group">
 											<label for="first-name" class="control-label col-md-3 col-sm-3 col-xs-12">First Name <span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 col-xs-12">
-												<input type="text" name="first_name" class="form-control col-md-7 col-xs-12" required="required" />
+												<input type="text" name="first_name" class="form-control col-md-7 col-xs-12" value="<?php echo $user->first_name; ?>" required="required" />
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="last-name" class="control-label col-md-3 col-sm-3 col-xs-12">Last Name <span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 col-xs-12">
-												<input type="text" name="last_name" class="form-control col-md-7 col-xs-12" required="required" />
+												<input type="text" name="last_name" class="form-control col-md-7 col-xs-12" value="<?php echo $user->last_name; ?>" required="required" />
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="profile-image" class="control-label col-md-3 col-sm-3 col-xs-12">Profile Image <span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 col-xs-12">
 												<input type="file" name="profile_image" required="required" />
+												<input type="hidden" name="old_image" value="<?php echo $user->profile_image; ?>" />
 											</div>
 										</div>
 										<div class="ln_solid"></div>

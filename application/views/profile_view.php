@@ -17,17 +17,26 @@
 									<div class="clearfix"></div>
 								</div>
 								<div class="x_content">
-									<?php
-									if($empty) {
-										echo 'Oops .. You have not update your profile. Click the button to update your profile.';
-									?>
+									<div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+										<div class="profile_img">
+											<div id="crop-avatar">
+												<!-- Current avatar -->
+												<img class="img-responsive avatar-view" src="<?php echo base_url(); ?>uploads/<?php echo $user->profile_image; ?>" alt="Avatar">
+											</div>
+										</div>
 										<br />
-										<a class="btn btn-primary" href="<?php echo site_url('profile/update_profile'); ?>">Update Profile</a>
-									<?php
-									} else {
-										echo 'Profile found';
-									}
-									?>
+										<a class="btn btn-success" href="<?php echo site_url('profile/update_profile'); ?>"><i class="fa fa-edit m-right-xs"></i> Update Profile</a>
+									</div>
+									<div class="col-md-9 col-sm-9 col-xs-12">
+										<label for="first-name">First Name</label>
+										<p><?php echo $user->first_name; ?></p>
+										<label for="last-name">Last Name</label>
+										<p><?php echo $user->last_name; ?></p>
+										<label for="email">E-mail</label>
+										<p><?php echo $user->email; ?></p>
+										<label for="profile-image-name">Profile Image</label>
+										<p><?php echo $user->profile_image; ?></p>
+									</div>
 								</div>
 							</div>
 						</div>

@@ -22,19 +22,21 @@
 											<tr>
 												<th>ID</th>
 												<th>E-mail</th>
-												<th>Verified status</th>
-												<th>Hash</th>
+												<th>First Name</th>
+												<th>Last Name</th>
+												<th>Profile Image</th>
 											</tr>
 										</thead>
 										<tbody>
 											<?php
-											foreach($users as $user) {
+											foreach($users as $_user) {
 											?>
 												<tr>
-													<td><?php echo $user->id; ?></td>
-													<td><?php echo $user->email; ?></td>
-													<td><?php echo $user->is_verified; ?></td>
-													<td><?php echo $user->hash; ?></td>
+													<td><?php echo $_user->id; ?></td>
+													<td><?php echo $_user->email; ?></td>
+													<td><?php echo $_user->first_name; ?></td>
+													<td><?php echo $_user->last_name; ?></td>
+													<td><img src="<?php echo base_url(); ?>uploads/<?php echo $_user->profile_image; ?>" alt="Profile image" class="avatar"></td>
 												</tr>
 											<?php
 											}

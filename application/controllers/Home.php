@@ -9,11 +9,18 @@ class Home extends CI_Controller {
 	}
 
 	public function index() {
-		$data['users'] = $this->user_model->get_all_user();
+		$user = array(
+			'id' => $this->session->userdata('id')
+		);
+		
+		$data = array(
+			'users' => $this->user_model->get_all_user(),
+			'user' => $this->user_model->get_user($user)
+		);
 
 		$this->load->view('templates/header');
-		$this->load->view('templates/sidebar_navigation');
-		$this->load->view('templates/top_navigation');
+		$this->load->view('templates/sidebar_navigation', $data);
+		$this->load->view('templates/top_navigation', $data);
 		$this->load->view('home_view', $data);
 		$this->load->view('templates/footer_content');
 		$this->load->view('templates/footer');

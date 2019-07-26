@@ -12,11 +12,11 @@
 					<!-- menu profile quick info -->
 					<div class="profile clearfix">
 						<div class="profile_pic">
-							<img src="<?php echo base_url(); ?>upload/user.png" alt="User profile image" class="img-circle profile_img">
+							<img src="<?php echo base_url(); ?>uploads/<?php echo $user->profile_image; ?>" alt="User profile image" class="img-circle profile_img">
 						</div>
 						<div class="profile_info">
 							<span>Welcome,</span>
-							<h2><?php echo $this->session->userdata('email'); ?></h2>
+							<h2><?php echo $user->first_name; ?></h2>
 						</div>
 						<div class="clearfix"></div>
 					</div>
