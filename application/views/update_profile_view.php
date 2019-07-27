@@ -33,7 +33,7 @@
 										<div class="form-group">
 											<label for="profile-image" class="control-label col-md-3 col-sm-3 col-xs-12">Profile Image <span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 col-xs-12">
-												<input type="file" name="profile_image" required="required" />
+												<input type="file" name="profile_image" />
 												<input type="hidden" name="old_image" value="<?php echo $user->profile_image; ?>" />
 											</div>
 										</div>

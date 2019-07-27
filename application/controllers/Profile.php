@@ -55,10 +55,15 @@ class Profile extends CI_Controller {
 			$last_name = $this->input->post('last_name');
 
 			if(!empty($_FILES['profile_image']['name'])) {
+				$this->load->helper('date');
+
+				$format = '%Y%m%d%H%i%s';
+				date_default_timezone_set('ETC/GMT-7');
+
 				$config = array(
 					'upload_path' => './uploads/',
 					'allowed_types' => 'gif|jpg|png',
-					'file_name' => $user_id.'_'.now(),
+					'file_name' => $user_id.'_'.mdate($format),
 					'overwrite' => TRUE,
 					'max_size' => 1024
 				);
